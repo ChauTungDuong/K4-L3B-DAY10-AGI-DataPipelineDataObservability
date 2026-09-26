@@ -36,7 +36,11 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
             doi = item.get("DOI", "")
             title_list = item.get("title", [])
             title = title_list[0] if title_list else "Unknown Title"
-            summary = item.get("abstract", "")
+            # Abstract cleanup (remove XML/JATS tags and decode entities)
+            raw_summary = item.get("abstract", "") or ""
+            import re
+            from html import unescape
+            summary = " ".join(unescape(re.sub(r"<[^>]+>", " ", raw_summary)).split()).strip()
             
             author_list = []
             for author in item.get("author", []):
@@ -47,8 +51,22 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
             categories = item.get("subject", [])
             primary_category = categories[0] if categories else ""
             
-            pub_date = item.get("published-print", {}).get("date-parts", [[None]])[0]
-            published = "-".join([str(p).zfill(2) for p in pub_date if p]) if pub_date[0] else "1970-01-01"
+            # Robust date extraction from published, published-online, published-print, issued, or created
+            pub_dict = (
+                item.get("published")
+                or item.get("published-online")
+                or item.get("published-print")
+                or item.get("issued")
+                or item.get("created")
+                or {}
+            )
+            parts = pub_dict.get("date-parts", [[]])[0] if isinstance(pub_dict, dict) else []
+            if parts and parts[0] is not None:
+                published = "-".join(str(p).zfill(2) for p in parts[:3])
+            elif isinstance(pub_dict.get("date-time"), str):
+                published = pub_dict["date-time"][:10]
+            else:
+                published = "1970-01-01"
             
             url = item.get("URL", f"https://doi.org/{doi}")
             

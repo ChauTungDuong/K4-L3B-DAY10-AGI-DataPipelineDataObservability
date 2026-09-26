@@ -31,8 +31,10 @@ class EvaluationBundle:
 
 
 def _token_f1(reference: str, prediction: str) -> float:
-    ref_tokens = normalize_whitespace(reference).lower().split()
-    pred_tokens = normalize_whitespace(prediction).lower().split()
+    ref_str = "" if reference is None or (isinstance(reference, float) and pd.isna(reference)) else str(reference)
+    pred_str = "" if prediction is None or (isinstance(prediction, float) and pd.isna(prediction)) else str(prediction)
+    ref_tokens = normalize_whitespace(ref_str).lower().split()
+    pred_tokens = normalize_whitespace(pred_str).lower().split()
     if not ref_tokens or not pred_tokens:
         return 0.0
     ref_set = set(ref_tokens)

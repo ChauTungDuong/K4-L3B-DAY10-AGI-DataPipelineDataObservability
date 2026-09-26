@@ -17,6 +17,8 @@ def build_llm(settings: Settings, temperature: float = 0.0):
             model=settings.model_name,
             google_api_key=settings.google_api_key,
             temperature=temperature,
+            timeout=8,
+            max_retries=1,
         )
     if provider == "openai":
         return ChatOpenAI(

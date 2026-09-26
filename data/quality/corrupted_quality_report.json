@@ -1,0 +1,11 @@
+{
+  "success": false,
+  "results": {
+    "row_count": true,
+    "id_not_null": true,
+    "title_not_null": true,
+    "text_not_null": true,
+    "id_unique": false,
+    "summary_length": false
+  }
+}

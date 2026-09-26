@@ -7,6 +7,9 @@ from typing import Any
 import pandas as pd
 
 
+from core.utils import first_sentence
+
+
 def build_test_set(df: pd.DataFrame, output_path) -> list[dict[str, Any]]:
     test_set = []
     
@@ -23,9 +26,9 @@ def build_test_set(df: pd.DataFrame, output_path) -> list[dict[str, Any]]:
         
         if q_type == "summary":
             question = f"What is the summary of the paper '{title}'?"
-            gt = str(row["summary"]).split(". ")[0] + "."
+            gt = first_sentence(str(row["summary"]))
         elif q_type == "authors":
-            question = f"Who are the authors of the paper '{title}'?"
+            question = f"Who authored the paper '{title}'?"
             gt = str(row["authors_joined"])
         elif q_type == "date":
             question = f"When was the paper '{title}' published?"
