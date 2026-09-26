@@ -7,7 +7,7 @@
 | Họ và tên | Nguyễn Đình Tuấn Anh |
 | MSSV | 2A202602735 |
 | Khóa/Lớp | K4 / L3B |
-| Tên nhóm | Nhóm 3 người (AGI) |
+| Tên nhóm | AGI |
 | Vai trò chính | Observability Gate & Evaluation Owner |
 | Repository | https://github.com/ChauTungDuong/K4-L3B-DAY10-AGI-DataPipelineDataObservability |
 | Ngày hoàn thành | 2026-09-26 |
