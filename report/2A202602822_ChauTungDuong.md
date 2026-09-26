@@ -5,9 +5,9 @@
 | Thông tin         | Nội dung                                                                 |
 | ------------------ | ------------------------------------------------------------------------ |
 | Họ và tên       | Châu Tùng Dương                                                          |
-| MSSV               | (Trưởng nhóm)                                                            |
+| MSSV               | 2A202602822                                         |
 | Khóa/Lớp         | K4-L3B                                                                   |
-| Tên nhóm         | Nhóm 3 người                                                             |
+| Tên nhóm         | AGI                                         |
 | Vai trò chính    | Trưởng nhóm / Pipeline Orchestration & Corruption Engine                 |
 | Repository         | https://github.com/ChauTungDuong/K4-L3B-DAY10-AGI-DataPipelineDataObservability |
 | Ngày hoàn thành | 2026-09-26                                                               |
