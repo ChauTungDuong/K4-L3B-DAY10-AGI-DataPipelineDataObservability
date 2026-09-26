@@ -7,7 +7,7 @@
 | Họ và tên | Nguyễn Gia Khánh |
 | MSSV | 2A202602851 |
 | Khóa/Lớp | K4 / L3B |
-| Tên nhóm | AGI (theo tên repository) |
+| Tên nhóm | AGI |
 | Vai trò chính | Data ingestion và cleaning |
 | Repository | https://github.com/ChauTungDuong/K4-L3B-DAY10-AGI-DataPipelineDataObservability |
 | Ngày lập báo cáo | 2026-09-26 |
