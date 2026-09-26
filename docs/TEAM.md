@@ -1,7 +1,7 @@
 # Danh Sách Thành Viên & Báo Cáo Phân Công Nhóm
 
-- **Tên Nhóm:** Nhóm 3 người
-- **Mã Nhóm / Lớp:** K4-L3B-DAY10
+- **Tên Nhóm:** AGI
+- **Mã Nhóm / Lớp:** AGI - L3B - H202
 - **Tên Repository Nộp Bài:** K4-L3B-DAY10-AGI-DataPipelineDataObservability
 
 ---
